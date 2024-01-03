@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  node-reback:
+    container_name: node-reback
+    build: .
+    volumes:
+      - ./:/app
+    env_file:
+      - config/config.env
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
