@@ -1,5 +1,10 @@
 version: '3.1'
 services:
   node-reback:
+    build: 
+      context: .
+      args:
+        - NODE_ENV=production
     environment:
       - NODE_ENV=production
+    command: npm run start

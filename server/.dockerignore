@@ -1,4 +1,6 @@
-server/node_modules
+node_modules
 *.env
 Dockerfile
 commands.sh
+docker-compose*
+compose*
