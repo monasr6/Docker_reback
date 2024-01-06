@@ -28,4 +28,7 @@ docker logs reback-container
 # to show the logs of container in real time
 docker logs reback-container -f
 
+# to create containers with docker-compose ( -d to don't show cmd of opp in my cmd , --build to build the image , -f to choose the file ) 
+docker-compose -f .\docker-compose.yml -f .\docker-compose-dev.yml up -d --build
+
 
