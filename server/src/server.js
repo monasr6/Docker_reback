@@ -5,19 +5,23 @@ const redis = require("redis");
 const app = express();
 
 // mongo
-const user = "man";
-const pas = "qqq";
+const user = "root";
+const pas = "example";
 const host = "mongo";
 const port = 27017;
 
-mongoose
-  .connect(`mongodb://${user}:${pas}@${host}:${port}`)
-  .then(() => {
+const mongoUrl = `mongodb://${user}:${pas}@${host}:${port}`;
+
+const connectToMongo = async () => {
+  try {
+    await mongoose.connect(mongoUrl);
     console.log("Connected to mongoDB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  } catch (err) {
+    console.log("Error connecting to mongoDB", err);
+  }
+};
+
+connectToMongo();
 
 // redis
 const redisPort = 6379;

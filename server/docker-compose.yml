@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   node-reback:
-    container_name: nodex
+    # container_name: nodex
     volumes:
       - ./src:/app/src:ro
     env_file:
@@ -14,20 +14,14 @@ services:
   
   mongo:
     image: mongo
-    container_name: mongox
     restart: always
-    ports:
-      - 27017:27017
     volumes:
-      - mongo_data:/data/db
-    env_file:
-      - config/config.env
+      - mongo-data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
 
   mongo-express:
-    container_name: mongo-expressx
     image: mongo-express
     restart: always
     ports:
@@ -44,8 +38,7 @@ services:
     container_name: redisx
     restart: always
 
-  nginx-reback:
-    container_name: nginxx
+  nginx:
     image: nginx:stable-alpine
     ports:
       - "80:80"
@@ -56,4 +49,4 @@ services:
     
 
 volumes:
-  mongo_data:
+  mongo-data:
