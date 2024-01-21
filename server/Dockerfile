@@ -13,5 +13,3 @@ RUN if [ "$NODE_ENV" = "production" ]; \
 # RUN npm install
 
 COPY . .
-
-EXPOSE 3000

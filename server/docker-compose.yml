@@ -2,6 +2,8 @@ version: '3.1'
 services:
   node-reback:
     # container_name: nodex
+    image:
+      ctrl6/docker-reback
     volumes:
       - ./src:/app/src:ro
     env_file:
